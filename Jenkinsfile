@@ -1,16 +1,16 @@
 pipeline {
-agents any
+  agent any
  
-parameters {
+  parameters {
       string defaultValue: 'DEV' ,name: 'ENV'
    }
-triggers{
-pollSCM '* * * * *'
+  triggers{
+      pollSCM '* * * * *'
 }
-stages {
-  stage('checkout') {
-   steps  checkout scm
-}}
+ stages {
+   stage('checkout') {
+     steps  checkout scm
+ }}
   stage('Build') {
    steps {
       sh 'mvn install'
