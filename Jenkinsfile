@@ -22,7 +22,7 @@ stages {
     sh 'cp /root/.jenkins/workspace/maharastra/target/maharastra.war  /root/apache-tomcat-11.0.15/webapps'
     echo "deployment has been COMPLETED on QA!"
   }
-        else (env:ENV == 'UAT'){
+        else (env.ENV == 'UAT'){
     sh 'cp /root/.jenkins/workspace/maharastra/target/maharastra.war  /root/apache-tomcat-11.0.15/webapps'
     echo "deployment has been COMPLETED on UAT!"
   }
