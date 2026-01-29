@@ -26,10 +26,12 @@ pipeline {
 
         	echo "deployment has been COMPLETED on QA!"
 			 }
-			else ( env.ENV == 'UAT' ){
-    		sh 'cp /root/.jenkins/workspace/mumbai/target/mumbai.war  /root/apache-tomcat-11.0.15/webapps
-
-    		echo "deployment has been done on UAT!"
+			else if ( env.ENV == 'UAT' ){
+    		sh 'cp /root/.jenkins/workspace/mumbai/target/mumbai.war  /root/apache-tomcat-11.0.15/webapps'
+                echo "deployment has been done on UAT!"
+                        else {
+                         echo "No deployment for ENV = ${env.ENV}"
+                             }
 
 }
 			}}}	
