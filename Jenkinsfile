@@ -16,7 +16,7 @@ pipeline {
 		      }}
 		stage('Build') {
 	           steps {
-			  sh '/home/swapnil/Documents/DevOps-Software/apache-maven-3.9.4/bin/mvn install'
+			  sh 'mvn install'
 	                 }}
 		stage('Deployment'){
 		    steps {
